@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="allCss/contactme.css"/>
+  <link rel="stylesheet" href="allCss/constant_layout.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="contact-wrapper page-wrapper">
+
+    <!-- Ally Phone Icon -->
+    <div class="phone-launcher" onclick="showForm()">
+      <img src="allImages/contactmeImages/ally phone.png" alt="Contact Phone" id="phone-icon">
+    </div>
+
+    <!-- Hidden Form Container -->
+    <div id="contactFormContainer">
+	<h1 class="form-heading">Contact Me!</h1>
+      <form id="contactForm" onsubmit="return validateForm(event)">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required
+         pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+         title="Please enter a valid email address">
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" 
+         placeholder="e.g. +60123456789" 
+         pattern="^\+?[0-9]{7,15}$" 
+         title="Phone number must be 7 to 15 digits, optionally starting with +"
+         required>
+
+  <label for="reason">Contact Reason:</label>
+  <select id="reason" name="reason" onchange="toggleOtherReason()" required>
+    <option value="">Select a reason</option>
+    <option value="Just Saying Hi">Just Saying Hi!</option>
+    <option value="Feedback on Your Website">Feedback on Your Website</option>
+    <option value="Project Ideas">Project Ideas</option>
+    <option value="Collaboration">Collaboration</option>
+    <option value="Job Opportunity">Job Opportunity</option>
+    <option value="Internship Offer">Internship Offer</option>
+    <option value="Freelance Request">Freelance Request</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <div id="otherReasonBox" style="display: none;">
+    <label for="otherReason">Please specify:</label>
+    <input type="text" id="otherReason" name="otherReason"
+           placeholder="Type your reason here" required>
+  </div>
+
+  <label for="enquires">Enquiries:</label>
+  <textarea id="enquires" name="enquires" placeholder="I have an enquiry!" required></textarea>
+
+  <input type="submit" value="Send Message">
+
+		<div class="extra-links">
+  <h3>Other Ways to Reach Me</h3>
+  <div class="contact-icons">
+	<a href="mailto:cindycry711@gmail.com?subject=Enquiry%20from%20your%20Portfolio&body=Hi,%20I'm%20reaching%20out%20after%20viewing%20your%20portfolio.%0A%0AI%20would%20like%20to%20enquire%20further%20about%20your%20work.%0A%0ALooking%20forward%20to%20your%20response.">
+	  <img src="allImages/contactmeImages/email_icon.png" class="icon" alt="Email"> cindycry711@gmail.com
+	</a>
+
+    <a href="https://instagram.com/cindywong2005" target="_blank">
+      <img src="allImages/contactmeImages/social_icon.png" alt="Social Media" class="icon"> @cindywong2005
+    </a>
+  </div>
+</div>
+
+      </form>
+    </div>
+  </div>
+  
+  <!-- Mario Buttons -->
+    <a href="STARTINGPAGE.html" class="coin-button">
+      <img src="allImages/constantlayoutImages/mario dice.webp" alt="mario coin" width="70px">
+    </a>
+
+    <a href="#" class="music-button" id="music-toggle">
+      <img src="allImages/constantlayoutImages/mario sound block.webp" alt="music button" width="60">
+    </a>
+
+    <a href="#" class="pipe-button" id="pipe-button">
+      <img src="allImages/constantlayoutImages/mario pipe.png" alt="pipe button" width="70">
+    </a>
+
+  <!-- Audio -->
+  <audio id="mario-intro" src="sounds/mario_intro.mp3" preload="auto"></audio>
+  <audio id="mario-bye" src="sounds/mario_bye.mp3" preload="auto"></audio>
+  <audio id="bg-music" src="music/contact music.mp3" loop></audio>
+  <audio id="pipe-sound" src="sounds/mario pipe.mp3" preload="auto"></audio>
+  <audio id="sound-effect" src="sounds/item roll.mp3" preload="auto" loop></audio>
+
+  <script src="allJs/constant_javascript.js"></script>
+  <script src="allJs/contactme.js"></script>
+</body>
+
+
+</html>
+
+

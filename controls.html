@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controls Page</title>
+  <link rel="stylesheet" href="allCss/controls.css" />
+  <link rel="stylesheet" href="allCss/constant_layout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="instructions-wrapper page-wrapper">
+    <h1>Controls Page</h1>
+
+		<div class="instructions-box">
+	  <div class="corner-screw">
+		<h2>How to Explore This Portfolio</h2>
+		<ul class="icon-instructions">
+		  <li>
+			<img src="allImages/constantlayoutImages/mario pipe.png" alt="Pipe Button" class="big-icon">
+			<span>Jumps to the top of the page! (only appears when you scroll!)</span>
+		  </li>
+		  <li>
+			<img src="allImages/constantlayoutImages/mario dice.webp" alt="Dice Button" class="big-icon">
+			<span>Returns to the Table of Contents (main navigation page)</span>
+		  </li>
+		  <li>
+			<img src="allImages/constantlayoutImages/mario sound block.webp" alt="Music Button" class="big-icon">
+			<span>Mutes / Unmutes background music</span>
+		  </li>
+		  <li>
+			<img src="allImages/controlsImages/click.png" alt="Click Icon" class="big-icon">
+			<span>Click each page to unlock the music!</span>
+		  </li>
+		</ul>
+		<p class="footer-note">Have fun exploring this portfolio!<br>
+		Feel free to test the buttons right now!</p>
+	  </div>
+	</div>
+</div>
+
+
+ <!-- Mario Buttons -->
+   
+    <a href="STARTINGPAGE.html" class="coin-button">
+      <img src="allImages/constantlayoutImages/mario dice.webp" alt="mario coin" width="70px">
+    </a>
+
+    <a href="#" class="music-button" id="music-toggle">
+      <img src="allImages/constantlayoutImages/mario sound block.webp" alt="music button" width="60">
+    </a>
+
+    <a href="#" class="pipe-button" id="pipe-button">
+      <img src="allImages/constantlayoutImages/mario pipe.png" alt="pipe button" width="70">
+    </a>
+
+
+  <!-- Audio -->
+  <audio id="bg-music" src="music/instructions page.mp3" loop></audio>
+  <audio id="pipe-sound" src="sounds/mario pipe.mp3" preload="auto"></audio>
+  <audio id="sound-effect" src="sounds/item roll.mp3" preload="auto" loop></audio>
+
+  <script src="allJs/constant_javascript.js"></script>
+</body>
+</html>

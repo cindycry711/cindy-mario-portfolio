@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('../allImages/aboutmeImages/data house.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #c5af8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent box */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.encyclopedia {
+  position: relative;
+  width: 700px;
+  margin: auto;
+}
+
+.bg-img {
+  width: 100%;
+  display: block;
+}
+
+.overlay-img {
+  position: absolute;
+  top: 220px;     
+  left: 390px;    
+  width: 290px;  
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.zoomable {
+  cursor: zoom-in;
+}
+
+#zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#zoom-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+#zoom-overlay.show {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  .content.page-wrapper {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .encyclopedia {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .bg-img {
+    width: 100%;
+  }
+
+  .overlay-img {
+    top: 130px;
+    left: 215px;
+    width: 240px;
+	max-width: 100px;
+    max-height: 60vh;
+  }
+
+  h1, p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  

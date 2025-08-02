@@ -1,0 +1,144 @@
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+body, html {
+  cursor: url('../cursor/mario-hand.cur'), auto;
+  font-family: 'Quicksand', Arial, sans-serif;
+ 
+}
+
+.page-wrapper {
+  position: relative;
+  animation: slideFadeIn 0.8s ease-out;
+  animation-delay: 0.2s;
+  
+}
+
+.coin-button img {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.coin-button:hover img {
+  animation: spin 1.2s linear infinite;
+}
+
+.music-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.music-button img {
+  transition: transform 0.3s ease;
+}
+
+.music-button:hover img {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* MARIO PIPE! */
+.pipe-button {
+  position: fixed; 
+  bottom: 15px;
+  right: 120px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.pipe-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.pipe-button.visible:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.pipe-button img {
+  cursor: url('mario-hand.cur'), pointer;
+}
+
+
+@media screen and (max-width: 480px) {
+  /* Make background scale properly */
+  .background {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  /* Reduce h1/h2 sizes */
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+ 
+  .pipe-button,
+  .coin-button,
+  .music-button {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+
+  .pipe-button {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .coin-button {
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+
+  .music-button {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+  
+   

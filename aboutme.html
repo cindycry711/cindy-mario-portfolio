@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <link rel="stylesheet" href="allCss/constant_layout.css"/>
+  <link rel="stylesheet" href="allCss/aboutme.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="content page-wrapper">
+    <div class="encyclopedia">
+      <img src="allImages/aboutmeImages/Cindy.png" alt="Encyclopedia Layout" class="bg-img">
+      <img src="allImages/aboutmeImages/about cindy.png" alt="Cindy's Card" class="overlay-img zoomable" id="zoomable-img">
+    </div>
+
+    <h1>About Me</h1>
+    <p>Click anywhere to listen to some tunes! 🎵</p>
+    <p>Click the yellow picture to zoom in!</p>
+  </div> 
+
+  <!-- Zoom Overlay -->
+  <div id="zoom-overlay" class="hidden">
+    <img id="zoom-image" alt="Zoomed view">
+	
+  </div>
+  
+<!-- Mario Dice Block -->
+ <a href="STARTINGPAGE.html" class="coin-button">
+    <img src="allImages/constantlayoutImages/mario dice.webp" alt="mario coin" width="70px">
+  </a>
+ 
+ <!-- Mario Sound Block -->
+ <a href="#" class="music-button" id="music-toggle">
+    <img src="allImages/constantlayoutImages/mario sound block.webp" alt="music button" width="60">
+  </a>
+  
+ <!-- Pipe Button -->
+<a href="#" class="pipe-button" id="pipe-button">
+  <img src="allImages/constantlayoutImages/mario pipe.png" alt="pipe button" width="70">
+</a>
+ 
+  <!-- Sounds -->
+  <audio id="sound-effect" src="sounds/item%20roll.mp3" preload="auto" loop></audio>
+  <audio id="bg-music" src="music/data%20house.mp3" loop></audio>
+  <audio id="pipe-sound" src="sounds/mario%20pipe.mp3" preload="auto"></audio>
+
+  <script src="allJs/aboutme.js"></script>
+  <script src="allJs/constant_javascript.js"></script>
+</body>
+</html>

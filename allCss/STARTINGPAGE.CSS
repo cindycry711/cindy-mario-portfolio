@@ -1,0 +1,323 @@
+@font-face {
+  font-family: 'MarioKartFont'; /* Any Name, self-assign */
+  src: url('../fonts/MarioKartWii.ttf') format('truetype');
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loading-screen img {
+  width: 95%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.loading-text {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  z-index: 10; /* Bring loading text in front of GIF */
+}
+
+.loading-text h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.loading-text p {
+  font-size: 30px;
+  margin: 0;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade1, .fade2, .fade3 {
+  opacity: 0;
+  animation: slideFadeIn 1s ease-out forwards;
+}
+
+.fade1 {
+  animation-delay: 1.2s;
+}
+.fade2 {
+  animation-delay: 1.4s;
+}
+.fade3 {
+  animation-delay: 1.6s;
+}
+
+body {
+  position: relative;
+  font-family: 'MarioKartFont', sans-serif;
+  background-image: url('../allImages/STARTINGPAGEImages/mariokartbackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  cursor: url('../cursor/mario-hand.cur'), auto;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5; /* 50% opacity */
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.grid {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-gap: 10px;
+    }
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: #444;
+  border: 2px solid #888;
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+  text-decoration: none; /* remove underline from links */
+}
+
+.item:focus {
+  outline: 3px solid yellow;
+  background: #666;
+}
+
+h2 {
+  font-weight: 250;
+  z-index: 9999;
+}
+
+.brick-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.brick-blocks {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  z-index: 0;
+}
+
+
+
+.brick {
+  width: 200px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+
+/* Animation Section!! */
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drop {
+  animation: dropIn 0.5s ease-out forwards;
+}
+
+/* Delay staggered drop effect */
+.delay1 {
+  animation-delay: 2.5s;
+}
+
+.delay2 {
+  animation-delay: 2.7s;
+}
+
+.delay3 {
+  animation-delay: 2.9s;
+}
+
+
+.brick-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.brick-blocks {
+  display: flex;
+  gap: 0;
+  z-index: 1;
+}
+
+.name-drop {
+  position: absolute;
+  top: 10px; /* adjust to sit in the middle of bricks */
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px black;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: textDrop 0.6s ease-out forwards;
+  animation-delay: 3.3s;
+}
+
+.music-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.music-button img {
+  transition: transform 0.3s ease;
+}
+
+.music-button:hover img {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    transform: scale(1.25);
+    transform-origin: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 60px);
+    grid-gap: 6px;
+  }
+
+  .item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .item img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .brick-blocks img {
+    width: 150px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  h2.name-drop {
+    font-size: 1rem;
+    top: 20px; /* moved down a bit */
+  }
+
+  .music-button {
+  position: fixed;
+  top: 360px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.music-button img {
+  width: 50px;
+}

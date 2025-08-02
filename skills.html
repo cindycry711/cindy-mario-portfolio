@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills Page</title>
+  <link rel="stylesheet" href="allCss/constant_layout.css"/>
+  <link rel="stylesheet" href="allCss/skills.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Mario Dice Block -->
+ <a href="STARTINGPAGE.html" class="coin-button">
+    <img src="allImages/constantlayoutImages/mario dice.webp" alt="mario coin" width="70px">
+  </a>
+ 
+ <!-- Mario Sound Block -->
+ <a href="#" class="music-button" id="music-toggle">
+    <img src="allImages/constantlayoutImages/mario sound block.webp" alt="music button" width="60">
+  </a>
+  
+ <!-- Pipe Button -->
+<a href="#" class="pipe-button" id="pipe-button">
+  <img src="allImages/constantlayoutImages/mario pipe.png" alt="pipe button" width="70">
+</a>
+ 
+  <!-- Sounds -->
+  <audio id="block-sfx" src="sounds/block-hit.mp3" preload="auto"></audio>
+  <audio id="sound-effect" src="sounds/item%20roll.mp3" preload="auto" loop></audio>
+  <audio id="bg-music" src="music/mario%20underground.mp3" loop></audio>
+  <audio id="pipe-sound" src="sounds/mario%20pipe.mp3" preload="auto"></audio>
+  <audio id="oneup-sfx" src="sounds/1up.mp3" preload="auto"></audio>
+  
+  
+  <!-- MAIN PART -->
+  <div class="page-wrapper">
+    <div class="skills-wrapper">
+      <h1>My Skill Blocks</h1>
+	  <caption>Click anywhere to listen to some tunes! 🎵</caption>
+		<p>I am proficient in Microsoft Office applications—including PowerPoint, Word, and Excel—and possess strong typing skills, enabling efficient and effective digital work. <b>Want some proof? Hit the blocks!</b></p>
+      
+	 <br> 
+	  <!-- Skill Block: Microsoft Office -->
+      <div class="block-container">
+        <div class="skill-label">Microsoft Office Specialist</div>
+        <img src="allImages/skillsImages/brick_0.webp" alt="Brick Block" class="brick" onclick="hitBlock(this, 'mos-certificates')">
+        <div class="popup" id="mos-certificates">
+          <img src="allImages/skillsImages/certificate1.jpg" alt="Certificate 1" class="zoomable">
+          <img src="allImages/skillsImages/certificate2.jpg" alt="Certificate 2" class="zoomable">
+		  <img src="allImages/skillsImages/certificate3.jpg" alt="Certificate 3" class="zoomable">
+
+
+        </div>
+      </div>
+
+      <!-- Skill Block: Typing Speed -->
+      <div class="block-container">
+        <div class="skill-label">Fast Typing Skills</div>
+        <img src="allImages/skillsImages/brick_0.webp" alt="Brick Block" class="brick" onclick="hitBlock(this, 'typing-proof')">
+        <div class="popup" id="typing-proof">
+          <img src="allImages/skillsImages/monkeytype1.jpg" alt="Typing Screenshot" class="zoomable">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="allJs/constant_javascript.js"></script>
+  <script src="allJs/skills.js"></script>
+  
+   <!-- Zoom Overlay -->
+  <div id="zoom-overlay">
+    <img id="zoom-image" src="" alt="Zoomed view">
+  </div>
+</body>
+</html>
